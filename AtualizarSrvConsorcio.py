@@ -24,6 +24,7 @@ def copiar_exe_pastas ():
             
 print("-----------------------------------------------")            
 
+
 def atualizar_exe ():
     #Atualizar o Exe
     for lista in lista_pastas:
