@@ -16,7 +16,6 @@ print(f"Caminho Raiz: {ROOT_DIR}",file=LOG)
 exenovo = ""
 lista_pastas = []
 selecao_pastas =[]
-global label_selecao
 
 
 # -----------------------------FUNCOES------------------------------------
@@ -79,8 +78,8 @@ def atualizar_explorer():
 #Janela
 janela = Tk()
 #Dimensoes Janela
-largura = 500
-altura = 300
+largura = 300
+altura = 650
 #Resolucao da Tela do PC
 largura_screen = janela.winfo_screenwidth()
 altura_screen = janela.winfo_screenheight()
@@ -91,25 +90,42 @@ posy = altura_screen/2 - altura/2
 janela.title("Atualizador de pastas SrvConsorcio")
 janela.geometry("%dx%d+%d+%d" % (largura,altura,posx,posy))
 
+
 #-------Labels
-texto_orientacao = Label(janela, text="Label1")
-label_selecao = Label(janela, text='')
+texto_branco = Label(janela,
+                        height=0,
+                        text="")
+texto_orientacao = Label(janela, text="Atualizador Srv\n(Consorcio/Saude)")
+
 
 
 #-------Buttons
-btn_selecionar = Button(janela, text="Selecionar Novo exe", command=selecao_exe)
-btn_rootdir = Button(janela, text="Selecionar Diretorio Raiz", command=selecao_dir)
-btn_copiar = Button(janela, text="Atualizar Pastas Selecionadas", command=atualizar)
+btn_selecionar = Button(janela,
+                        width=25,
+                        text="Selecionar Novo exe", 
+                        command=selecao_exe)
+btn_rootdir = Button(janela,
+                        width=25,
+                        text="Selecionar Diretorio Raiz", 
+                        command=selecao_dir)
+btn_atualizar = Button(janela,
+                        width=25,
+                        text="Atualizar Pastas Selecionadas", 
+                        command=atualizar)
 
 #-------Listbox
-List_Srv = Listbox(janela,selectmode=MULTIPLE)
+List_Srv = Listbox(janela,
+                    height=30,
+                    width=30,
+                    selectmode=MULTIPLE)
 
-#-------Grid (column=0, row=1)
-texto_orientacao.grid()
-btn_selecionar.grid()
-btn_copiar.grid()
-btn_rootdir.grid()
-List_Srv.grid()
-label_selecao.grid()
+#-------pack (column=0, row=1)
+
+texto_branco.pack()
+texto_orientacao.pack()
+btn_selecionar.pack()
+btn_rootdir.pack()
+List_Srv.pack()
+btn_atualizar.pack()
 
 janela.mainloop()
