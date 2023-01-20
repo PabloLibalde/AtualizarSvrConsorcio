@@ -68,7 +68,7 @@ def atualizar_explorer():
         time.sleep(2)
         os.system("start explorer.exe")
 
-
+"""
 #Janela Interface
 janela = Tk()
 janela.title("Automacao Atualização SrvConsorcio")
@@ -81,3 +81,4 @@ botao.grid(column=0, row=1)
 
 
 janela.mainloop()
+"""
